@@ -1,0 +1,1208 @@
+@import 'reset';
+
+@font-face {
+    font-family: 'harlow_solid_italicitalic';
+    src: url('../font/harlow_solid_italic_italic-webfont.woff2') format('woff2'),
+         url('../font/harlow_solid_italic_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'thai_sans_literegular';
+    src: url('../font/thaisanslite_r1-webfont.woff2') format('woff2'),
+         url('../font/thaisanslite_r1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$c-main: #1c75bc;
+$c-card: #fff;
+$c-bg: linear-gradient(to top, #E0EAFC , #CFDEF3);
+$c-text: #666;
+$c-subtext: #999;
+$c-img: none;
+$c-footer: #fff;
+
+$c-gold: #fbaf5d;
+$c-silver: #cccccc;
+$c-bronz: #a0410d;
+
+#facebook{background-color: #3b5998};
+
+@mixin flex($width) {
+ //    -webkit-box-flex: 0;
+	// -webkit-flex: 0 0 $width;
+	// -ms-flex: 0 0 $width;
+	// flex: 0 0 $width;
+	width: $width;
+	//margin: 0 10px;
+}
+@mixin shadow($level) {
+	@if $level == 1 {box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+	@if $level == 2 {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+	@if $level == 3 {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+	@if $level == 4 {box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+	@if $level == 5 {box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);}
+}
+
+.w {
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100%;
+}
+
+.pull{
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+// .w-auto {@include flex(auto);}
+// .w-1 {@include flex(60px);}
+// .w-2 {@include flex(140px);}
+// .w-3 {@include flex(25%);}
+// .w-4 {@include flex(300px);}
+// .w-5 {@include flex(380px);}
+// .w-6 {@include flex(460px);}
+// .w-7 {@include flex(540px);}
+// .w-8 {@include flex(620px);}
+// .w-9 {@include flex(700px);}
+// .w-10 {@include flex(780px);}
+// .w-11 {@include flex(860px);}
+// .w-12 {@include flex(940px);}
+
+.row{
+	margin: 0 -10px;
+}
+// @media (min-width: 576px) {
+//   .row {
+//     margin-right: -10px;
+//     margin-left: -10px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .row {
+//     margin-right: -10px;
+//     margin-left: -10px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .row {
+//     margin-right: -10px;
+//     margin-left: -10px;
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .row {
+//     margin-right: -10px;
+//     margin-left: -10px;
+//   }
+// }
+
+// @media (min-width: 576px) {
+//   .w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+//     margin-left: 10px;
+// 	margin-right: 10px;
+//   }
+
+// }
+
+// @media (min-width: 768px) {
+//   .w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+//     margin-left: 10px;
+// 	margin-right: 10px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+//     margin-left: 10px;
+// 	margin-right: 10px;
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+//     margin-left: 10px;
+// 	margin-right: 10px;
+//   }
+// }
+.wrapper{
+	min-height: 100vh;
+}
+
+.container{
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: none;
+}
+
+@media (min-width: 0px) {
+  	.container{
+		width: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+	.w-auto {@include flex(auto);}
+	.w-1 {@include flex(100%);}
+	.w-2 {@include flex(100%);}
+	.w-3 {@include flex(100%);}
+	.w-4 {@include flex(100%);}
+	.w-5 {@include flex(100%);}
+	.w-6 {@include flex(100%);}
+	.w-7 {@include flex(100%);}
+	.w-8 {@include flex(100%);}
+	.w-9 {@include flex(100%);}
+	.w-10 {@include flex(100%);}
+	.w-11 {@include flex(100%);}
+	.w-12 {@include flex(100%);}
+	.w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+	    margin-left: 0px;
+		margin-right: 0px;
+	 }
+}
+@media (min-width: 576px) {
+  	.container{
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+  	.container{
+		width: 100%;		
+	}
+	.w-auto {@include flex(auto);}
+	.w-1 {@include flex(100%);}
+	.w-2 {@include flex(100%);}
+	.w-3 {@include flex(50%);}
+	.w-4 {@include flex(50%);}
+	.w-5 {@include flex(100%);}
+	.w-6 {@include flex(100%);}
+	.w-7 {@include flex(100%);}
+	.w-8 {@include flex(100%);}
+	.w-9 {@include flex(100%);}
+	.w-10 {@include flex(100%);}
+	.w-11 {@include flex(100%);}
+	.w-12 {@include flex(100%);}
+
+}
+
+@media (min-width: 992px) {
+  	.container{
+		width: 940px;
+		padding: 20px 0px;
+	}
+	.w-auto {@include flex(auto);}
+	.w-1 {@include flex(8.33333333%);}
+	.w-2 {@include flex(16.66666667%);}
+	.w-3 {@include flex(25%);}
+	.w-4 {@include flex(33.33%);}
+	.w-5 {@include flex(380px);}
+	.w-6 {@include flex(50%);}
+	.w-7 {@include flex(540px);}
+	.w-8 {@include flex(620px);}
+	.w-9 {@include flex(75%);}
+	.w-10 {@include flex(780px);}
+	.w-11 {@include flex(860px);}
+	.w-12 {@include flex(100%);}
+}
+
+@media (min-width: 1200px) {
+  	.container{
+		width: 1020px;
+	}
+}
+.w-1, .w-2, .w-3, .w-4, .w-5, .w-6, .w-7, .w-8, .w-9, .w-10, .w-11, .w-12, .w{
+	float: left;
+}
+
+
+.m0{
+	margin: 0;
+}
+.m-20{
+	margin: -20px auto;
+}
+.box-20{
+	width: 100%;
+	height: 20px;
+}
+
+.fl{float: left;}
+.fr{float: right;}
+.cb{clear: both;}
+.line{
+	width:100%;
+	height: 2px;
+	background-color: rgba(0,0,0,0.1);
+	box-sizing: border-box;
+}
+.m10{
+	margin: 10px 0;
+}
+
+
+h1{
+	font-size: 36px;
+	color: $c-text;
+}
+h2{
+	font-size: 24px;
+	color: $c-text;
+}
+h3{
+	font-size: 24px;
+	color: $c-text;
+}
+h4{
+	font-size: 20px;
+	color: $c-text;
+}
+h5{
+	font-size: 18px;
+	color: $c-text;
+}
+h6{
+	font-size: 16px;
+	color: $c-text;
+}
+p{
+	font-size: 14px;
+	color: $c-text;
+}
+a{
+	font-size: 14px;
+	color: $c-text;
+	text-decoration: none;
+}
+a:link a:visited a:hover a:active a:focus{
+	text-decoration: none;
+	color: $c-text;
+}
+#active{
+	color: $c-card;
+	background-color: $c-main;
+	border-bottom: 2px solid $c-main;
+	margin-bottom: 20px;
+	@include shadow(2);
+}
+#activeHead{
+	color: $c-main;
+}
+
+.btn{
+
+	border:none;
+	height: 40px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: $c-main;
+	color: white;
+	cursor: pointer;
+	border-radius: 0;
+	@include shadow(1);
+	padding: 0 20px;
+}	
+
+
+.btn:hover{
+	@include shadow(2);
+	color: white;
+	transition: all 0.1s ease-in-out;
+}
+
+.input{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding: 0 10px;
+	box-sizing:border-box;
+	//margin-bottom: 20px;
+	border: none;
+	@include shadow(1);
+	font-size: 14px;
+}
+textarea{
+	font-family: Sans-Serif;
+	font-size: 13px;
+}
+.input-textarea{
+	
+	width: 100%;
+	text-align: left;
+	padding: 10px 10px;
+	box-sizing:border-box;
+	//margin-bottom: 20px;
+	border: none;
+	resize:none;
+	@include shadow(1);
+}
+.select{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding: 0 10px;
+	box-sizing:border-box;
+	//margin-bottom: 20px;
+	border: none;
+	@include shadow(1);
+	color: $c-text;
+	option{
+		color: $c-text;
+		font-size: 14px;
+		padding: 10px;
+	}
+}
+
+
+.input:focus ,.input-textarea:focus{
+	@include shadow(2);
+}
+
+label{
+	height: 38px;
+	line-height: 38px;
+	font-size: 14px;
+	color: $c-text;
+}
+ 
+body{
+	font-family: Helvetica, Arial, Sans-Serif;
+
+	background: $c-bg;
+	position: relative;
+	min-height: 100vh;
+}
+
+.card{
+	background-color:$c-card ;
+	@include shadow(1);
+}
+
+.gold{
+	border-top: 5px solid $c-gold;
+	box-sizing: border-box;
+}
+.silver{
+	border-top: 5px solid $c-silver;
+	box-sizing: border-box;
+}
+.bronz{
+	border-top: 5px solid $c-bronz;
+	box-sizing: border-box;
+}
+.fail{
+	border-top: 5px solid $c-card;
+	box-sizing: border-box;
+}
+
+.b-gold{
+	border: 2px solid $c-gold;
+	box-sizing: border-box;
+}
+
+.c-gold{
+	background-color: $c-gold;
+}
+.c-silver{
+	background-color: $c-silver;
+}
+.c-bronz{
+	background-color: $c-bronz;
+}
+.fail{
+	background-color: $c-card;
+}
+
+header{
+	width: 100%;
+	height: 56px;
+	background: $c-bg ;
+	@include shadow(2);
+	position: fixed;
+	z-index: 99;
+
+	.logo{
+		font-family: 'harlow_solid_italicitalic';
+		height: 100%;
+		line-height: 56px;
+		text-align: center;
+		background-color:$c-card ;
+		color: $c-main;
+		float: left;
+		font-size: 22px;
+		box-shadow: 1px 0px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	}
+	.login{
+		
+		height: 100%;
+		line-height: 56px;
+		text-align: center;
+		background-color:$c-card ;
+		float: right;
+		box-shadow: -1px 0px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+	}
+	.logined{
+		position: relative;
+		height: 100%;
+		line-height: 56px;
+		text-align: left;
+		background-color:$c-card ;
+		float: right;
+		padding-left: 50px;
+		box-sizing: border-box;
+		box-shadow: -1px 0px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+		img{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+			left: 10px;
+			top: 13px;
+		}
+	}
+	nav{
+		ul{
+			li{
+				height: 100%;
+				line-height: 56px;
+				text-align: center;
+				padding-left: 20px;
+				padding-right: 20px;
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+.b-header{
+	width: 100%;
+	height: 56px;
+}
+
+
+// ----------------------------------
+.modal-login {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+	transition: all 0.3s;
+	.modal-content {
+		position: absolute;
+	    background-color: $c-card;;
+	    margin: 0 auto; /* 15% from the top and centered */
+	    padding: 10px;
+	    padding-top: 66px;
+	    right: 0px;
+	    z-index: 100;
+	    box-sizing: border-box;
+	    height: 100vh;
+	    //border: 1px solid #888;
+		@include shadow(3);
+	  	}
+
+		/* The Close Button */
+		.close {
+		    color: #aaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: black;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+		.btn ,.input{
+			margin-bottom: 10px; 
+		}
+		h4{
+			line-height: 40px;
+		}
+}
+
+/* Modal Content/Box */
+
+// ----------------------------------
+
+
+.banner{
+
+	width: 100%;
+	height: 250px;
+	line-height: 250px;
+	text-align: center;
+	background: none;
+	x-index: -1;
+	@include shadow(1);
+	h1{
+		font-family: 'harlow_solid_italicitalic';
+		font-size: 100px;
+		color: $c-main;
+	}
+}
+.banner-news{
+	padding: 40px;
+	width: 100%;
+	height: 250px;
+	text-align: center;
+	background-color: $c-card;
+	background-image: url('../img/bg1.jpg');
+	background-position: center;
+	background-size: 100% auto;
+	x-index: -1;
+	box-sizing: border-box;
+	@include shadow(1);
+	h3{
+		line-height: 50px;
+	}
+	.btn{
+		margin-top: 20px;
+	}
+}
+.banner-news2{
+	padding: 40px;
+	width: 100%;
+	height: 250px;
+	text-align: center;
+	background-color: $c-card;
+	background-image: url('../img/bg2.jpg');
+	background-position: center;
+	background-size: 100% auto;
+	x-index: -1;
+	box-sizing: border-box;
+	@include shadow(1);
+	h3{
+		line-height: 50px;
+	}
+	.btn{
+		margin-top: 20px;
+	}
+}
+
+.item-card{
+	box-sizing:border-box;
+	@include shadow(1);
+	float: left;
+	// margin-left: 10px;
+	// margin-right: 10px;
+	background-color: $c-card;
+	margin-bottom: 20px;
+
+	.img{
+		width: 100%;
+		height: 165px;
+		background-color: $c-img;
+		position: relative;
+		img{
+			width: 100%;
+			height: 165px;
+			object-fit: contain;
+		}
+
+		
+	}
+	.item-description{
+		height: 80px;
+		padding: 10px;
+		box-sizing: border-box;
+		.item-project{
+			line-height: 30px;
+			overflow: hidden;
+			height: 30px;
+		}
+		.item-designer{
+			line-height: 30px;
+		}
+		
+	}
+	.item-prize{
+		height: 40px;
+		font-size: 24px;
+		line-height: 40px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.item-delete{
+		height: 40px;
+		font-size: 24px;
+		line-height: 40px;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 20px;
+		.btn-delete{
+			background: red;
+		}
+	}
+	
+}
+.item-card:hover{
+	@include shadow(2);
+	transition: all 0.1s ease-in-out;
+}
+
+.user-card{
+	box-sizing:border-box;
+	@include shadow(1);
+	float: left;
+	// margin-left: 10px;
+	// margin-right: 10px;
+	background-color: $c-card;
+	margin-bottom: 20px;
+
+	.img{
+		width: 100%;
+		height: 165px;
+		background-color: $c-img;
+		img{
+			width: 100%;
+			height: 165px;
+		}
+	}
+	.user-detail{
+		height: 50px;
+		padding: 10px;
+		box-sizing: border-box;
+		.img{
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+			float: left;
+			margin-right: 10px;
+			img{
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+			}
+		}
+		.user-name{
+			line-height: 30px;
+			overflow: hidden;
+			width: 50%;
+			height: 25px;
+			float: left;
+		}
+		.user-win{
+			line-height: 30px;
+			overflow: hidden;
+			height: 30px;
+			float: right;
+		}
+		
+	}
+	.user-prize{
+		height: 40px;
+		font-size: 24px;
+		line-height: 40px;
+		text-align: center;
+		font-weight: bold;
+	}
+	
+}
+.user-card:hover{
+	@include shadow(2);
+	transition: all 0.1s ease-in-out;
+
+}
+
+.item-modal{
+	.modal-header{
+		padding-left: 0;
+	}
+
+
+	.container{
+		padding: 0;
+		position: relative;
+	}
+	.detail{
+		@include shadow(3);
+		background-color: $c-card;
+		height: auto;
+		padding: 10px;
+		z-index: 800 ;
+
+		.btn-prize{
+			width: 33%;
+			margin-bottom: 10px;
+		}
+		.p1st{
+			background : $c-gold;
+		}
+		.p2nd{
+			background : $c-silver;
+		}
+		.p3rd{
+			background : $c-bronz;
+		}
+		
+		.image{
+			min-height: 300px;
+			background: $c-img;
+			margin-bottom: 10px;
+		}
+		img{
+			width: 100%;
+		}
+		p{
+			line-height: 30px;
+		}
+		.owner{
+			height: 30px;
+			img{
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+				float: left;
+				margin-right: 10px;
+			}
+			p{
+				float: left;
+			}
+		}
+	}
+	.comment{
+		margin-bottom: 200px;
+		h5{
+			line-height: 50px;
+		}
+		@include shadow(3);
+		background-color: $c-card;
+		height: auto;
+		padding: 10px;
+		z-index: 800 ;
+		.image{
+			
+			box-sizing: border-box;
+			img{
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+				float: left;
+				margin-right: 10px;
+			}
+			p{
+				float: left;
+				line-height: 30px;
+			}
+		}
+		.send-comment{
+			float: left;
+			position: relative;
+			margin-bottom: 20px;
+			.btn-send{
+				position: absolute;
+				padding: 0 20px;
+				top: 0;
+				right: 0px;
+			}
+		}
+		.commented{
+			.image{
+				font-size: 12px;
+			}
+			padding: 10px 0;
+			p{
+				line-height: 30px;
+			}
+		}
+	}
+
+}
+
+.project-card{
+	box-sizing:border-box;
+	@include shadow(1);
+	float: left;
+	//margin-left: 10px;
+	//margin-right: 10px;
+	min-height: 80px;
+	background-color: $c-card;
+	margin-bottom: 20px;
+
+	.project-name{
+		padding: 10px;
+		line-height: 30px;
+		float: left;
+		box-sizing: border-box;
+		p{
+			overflow: hidden;
+		}
+	}
+	.project-competitor{
+		line-height: 80px;
+		float: left;
+		text-align: center;
+		border-left: solid 2px #eee;
+		box-sizing:border-box;
+		.btn{
+			line-height: 40px;
+		}
+	}
+	.project-prize{
+		line-height: 80px;
+		float: left;
+		text-align: right;
+		border-left: solid 2px #eee;
+		box-sizing:border-box;
+		padding-right: 20px;
+	}
+	.project-countdown{
+		padding: 10px;
+		line-height: 30px;
+		float: left;
+		box-sizing: border-box;
+		text-align: center;
+		border-left: solid 2px #eee;
+		p{
+			overflow: hidden;
+		}
+		.btn{
+			line-height: 40px;
+		}
+		.btn-delete{
+			line-height: 40px;
+			text-align: center;
+			background: red;
+			border: none;
+			color: white;
+			margin-left: 15px;
+			margin-top: 10px;
+		}
+	}
+	.project-winner{
+		line-height: 80px;
+		float: left;
+		text-align: center;
+		border-left: solid 2px #eee;
+		box-sizing:border-box;
+		.btn{
+			line-height: 45px;
+			margin: 0;
+			width: 45px;
+			height: 45px;
+			padding: 0;
+			text-align: center;
+			img{
+				width: 100%;
+				box-sizing:border-box;
+			}
+		}
+	}
+}
+.project-head{
+	box-sizing:border-box;
+	float: left;
+	height: 30px;
+	//margin-left: 10px;
+	//margin-right: 10px;
+	min-height: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: $c-subtext;
+	.project-head-in{
+		padding: 10px;
+		line-height: 30px;
+		float: left;
+		box-sizing: border-box;
+	}
+}
+.project-card:hover{
+	@include shadow(2);
+	transition: all 0.1s ease-in-out;
+}
+.modal{
+	background-color: rgba(255,255,255,0.8);
+}
+.project-modal{
+	.modal-header{
+		padding-left: 0;
+	}
+
+	.container{
+		padding: 0;
+		position: relative;
+		height: 100vh;
+	}
+	.detail{
+		@include shadow(3);
+		background-color: $c-card;
+		height: auto;
+		padding: 10px;
+		z-index: 800 ;
+		box-sizing: border-box;
+	}
+	.poster{
+		min-height: 600px; 
+		background-color: $c-img;
+		img{
+			width: 100%;
+			background-color: $c-img;
+			@include shadow(1);
+		}
+		.input{
+		}
+	}
+	.item{
+		padding: 10px;
+		.input{
+			margin-bottom: 20px;
+		}
+		.input-textarea{
+			margin-bottom: 20px;
+		}
+		p{
+			line-height: 30px;
+		}
+		h6{
+			line-height: 40px;
+		}
+		.line{
+			margin: 10px 0;
+		}
+	
+	}
+}
+
+.search{
+	position: relative;
+	.input{
+		@include shadow(1);
+		text-align: center;
+	}
+	.input:hover,.input:focus{
+		@include shadow(2);
+		transition: all 0.1s ease-in-out;
+	}
+}
+.btn-search{
+	position: absolute;
+	right: 0px;
+	top: 0;
+	padding: 0 20px;
+}
+.filter{
+	margin: 0 auto;
+	nav{
+		margin: 20px 0;
+		ul{
+			li{
+				float: left;
+				padding: 10px 10px;
+				margin: 0 10px;
+			}
+		}
+	}
+}
+
+.formProject{
+	margin: 0 auto;
+	float: none;
+	.input{
+		margin-bottom: 20px;
+	}
+	
+}
+.upload-file{
+		position: relative;
+		height: auto;
+		@include shadow(1);
+		.input{
+			position: absolute;top: 0;
+		}
+		img{
+			width: 100%;
+			max-height: 300px;
+			margin-top: 40px;
+			object-fit: contain;
+		}
+	}
+
+// ------------------
+.profile{
+	@include shadow(1);
+	background-color: $c-card;
+	float: left;
+	margin-top: -140px;
+	margin-bottom: 20px;
+
+	.display{
+		width: 100%;
+		height: 220px;
+		background-color: $c-img;
+		box-sizing: border-box;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.name{
+		width: 100%;
+		height: 40px;
+		border-bottom: 2px solid rgba(0,0,0,0.1);
+		padding: 10px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	.detail{
+		width: 100%;
+		min-height: 100px;
+		border-bottom: 2px solid rgba(0,0,0,0.1);
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.contact{
+		width: 100%;
+		min-height: 100px;
+		border-bottom: 2px solid rgba(0,0,0,0.1);
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.attribute{
+		width: 100%;
+		min-height: 100px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+}	
+
+.portfolio{
+	float: left;
+	//margin-left: 15px;
+}
+
+
+.winner{
+	width: 100%;
+	height: 220px;
+	background: $c-card;
+	@include shadow(2);
+	border-box: box-sizing;
+	position: fixed;
+	z-index: 1;
+	.container{
+		width: 700px;
+	}
+	.prize{
+		width: 220px;
+		padding: 0 10px;
+		height: 165px;
+		float: left;
+		img{
+			width: 100%;
+			@include shadow(1);
+		}
+		.gold{
+			border-top: 5px solid $c-gold;
+		}
+		.silver{
+			border-top: 5px solid $c-silver;
+		}
+		.bronz{
+			border-top: 5px solid $c-bronz;
+		}
+		.prize-1st{
+			width: 100%;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			@include shadow(1);
+			background-color: $c-bg;
+		}
+	}
+}
+.winner-b{
+	width: 100%;
+	height: 220px;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+	width: 100%;
+	height: 200px;
+	background-color: $c-footer;
+	position: absolute;
+	bottom: 0;
+	box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	.top{
+		height: 80px;
+		.stat{
+			float: left;
+			.count{
+				font-size: 32px;
+			}
+			h3{
+				line-height: 50px;
+			}
+		}
+		.register{
+			float: right;
+			margin-top: 10px; 
+		}
+	}
+	.bottom{
+		height: 40px;
+
+		nav{
+			ul{
+				li{
+					float: left;
+					height: 40px;
+					line-height: 40px;
+					padding-right: 30px;
+					box-sizing: border-box;
+				}
+			}
+		}
+	}
+	
+}
+.b-footer{
+	width: 100%;
+	height: 200px;
+}
+
+
+// -----------------------------------------
