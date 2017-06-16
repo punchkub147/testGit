@@ -33,7 +33,7 @@
 	            if ($mysqli->query($sql) === TRUE) {
 	                //echo "Registered";
 	                $_SESSION['userLogin'] = $email;
-	                $_SESSION['flash'] = array("Registered","Email : $email");
+	                $_SESSION['flash'] = array("Success Registered","Email : $email");
 	                
 	                header('Location: '.$url);
 	            } else {
